@@ -32,12 +32,12 @@ const getJokes = (_,res) => {
   if(jokesData.length >0){
     res.status(200).send({
       'status_code' : 200,
-      'allJokes' : jokesData, 
+      allJokes : jokesData, 
     })
   }else{
     res.status(200).send({
       'status_code' : 200,
-      'allJokes' : [], 
+      allJokes : [], 
     })
   }
 

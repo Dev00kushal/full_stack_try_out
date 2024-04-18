@@ -23,11 +23,15 @@ class JokesViewModel extends ChangeNotifier {
   }
 
   // yo function ma url cheii url(endpoint) bata ayeko data lai response ma halera return garxa just fetching data k nothing more !! 😀
-  Future<dynamic> getJokes() async {
+  Future<List<Joke>> getJokes() async {
     try {
       dynamic response =
           await _baseApiServices.getApiResponse(AppUrls.getJokesUrl);
-      return response;
+      // Assuming response.body is a list of jokes
+
+      List<Joke> jokes = List<Joke>.from(
+          response["allJokes"].map((jokeJson) => Joke.fromJson(jokeJson)));
+      return jokes;
     } catch (e) {
       rethrow;
     }

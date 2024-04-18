@@ -9,7 +9,8 @@ import 'package:http/http.dart' as http;
 class NetworkApiServices extends BaseApiServices {
   @override
   // yo function le cheii api ko url lincha ani responseJson return garxa with error handling yedi internet chaina vane FetchDataException throw garxa
-  Future getApiResponse(String url) async {
+
+  Future<dynamic> getApiResponse(String url) async {
     dynamic responseJson;
     try {
       final response =

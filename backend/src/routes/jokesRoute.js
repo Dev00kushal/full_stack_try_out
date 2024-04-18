@@ -15,7 +15,7 @@ const jokesController = require("../controllers/jokesController");
 
 // yeslai yo route /add_jokes vanne ma post garyo 
 router.post("/add_jokes", jokesController.addJokes);
-router.post("/get_jokes", jokesController.getJokes);
+router.get("/get_jokes", jokesController.getJokes);
 
 // router lai export garyo aru thau ma ni chaina router tesaile
 module.exports = router;
