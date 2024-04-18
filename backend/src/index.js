@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const jokesRoutes = require("./src/routes/jokesRoutes");
+const jokesRoutes = require("../src/routes/jokesRoute");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
