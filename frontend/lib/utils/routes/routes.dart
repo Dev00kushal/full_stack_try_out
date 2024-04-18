@@ -1,18 +1,15 @@
 import 'package:blog_application/utils/routes/routes_name.dart';
-import 'package:blog_application/view/home_screen.dart';
-import 'package:blog_application/view/login_screen.dart';
-import 'package:blog_application/view/onboarding_screen.dart';
+import 'package:blog_application/view/create_jokes_screen.dart';
+import 'package:blog_application/view/jokes_screen.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RoutesName.login:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
-      case RoutesName.home:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
-      case RoutesName.onboarding:
-        return MaterialPageRoute(builder: (_) => const OnBoardingView());
+      case RoutesName.jokesScreen:
+        return MaterialPageRoute(builder: (_) => const JokesScreen());
+      case RoutesName.jokesCreationScreen:
+        return MaterialPageRoute(builder: (_) => const JokeCreatorScreen());
       default:
         return MaterialPageRoute(
             builder: (_) => const Scaffold(

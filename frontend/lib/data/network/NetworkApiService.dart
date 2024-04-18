@@ -25,11 +25,17 @@ class NetworkApiServices extends BaseApiServices {
 
 // yo function le post request garxa ani responseJson return garxa with error handling yedi internet chaina vane FetchDataException throw garxa
   @override
-  Future postApiResponse(String url, dynamic data) async {
+  Future<dynamic> postApiResponse(String url, dynamic data) async {
     dynamic responseJson;
     try {
       final response = await http
-          .post(Uri.parse(url), body: data)
+          .post(
+            Uri.parse(url),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonEncode(data),
+          )
           .timeout(const Duration(seconds: 10));
 
       responseJson = returnResponse(response);

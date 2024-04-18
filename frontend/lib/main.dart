@@ -1,5 +1,5 @@
 import 'package:blog_application/utils/routes/routes.dart';
-import 'package:blog_application/view_model/auth_view_model.dart';
+import 'package:blog_application/view_model/jokes_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => AuthViewModel()),
+        ChangeNotifierProvider(create: (context) => JokesViewModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        initialRoute: RoutesName.login,
+        initialRoute: RoutesName.jokesScreen,
         onGenerateRoute: Routes.generateRoute,
       ),
     );

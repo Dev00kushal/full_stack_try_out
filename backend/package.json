@@ -1,9 +1,8 @@
 {
-  "name": "yetikai_time_pass",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },

@@ -1,4 +1,4 @@
 class AppUrls {
-  static const baseUrl = "https://nest-js-rbac.onrender.com";
-  static const loginUrl = "$baseUrl/user/signin";
+  static const baseUrl = "http://192.168.1.5";
+  static const jokesUrl = "$baseUrl/api/add_jokes";
 }
