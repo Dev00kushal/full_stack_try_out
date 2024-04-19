@@ -1,6 +1,6 @@
 import 'package:blog_application/utils/routes/routes_name.dart';
 import 'package:blog_application/view/create_jokes_screen.dart';
-import 'package:blog_application/view/jokes_screen.dart';
+import 'package:blog_application/view/crud_btn_screen.dart';
 import 'package:blog_application/view/view_jokes_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +12,8 @@ class Routes {
       case RoutesName.jokesCreationScreen:
         return MaterialPageRoute(builder: (_) => const JokeCreatorScreen());
       case RoutesName.jokesViewScreen:
+        return MaterialPageRoute(builder: (_) => const ViewJokesScreen());
+      case RoutesName.updateJokesScreen:
         return MaterialPageRoute(builder: (_) => const ViewJokesScreen());
       default:
         return MaterialPageRoute(

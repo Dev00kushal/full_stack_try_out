@@ -40,10 +40,25 @@ const getJokes = (_,res) => {
       allJokes : [], 
     })
   }
-
-
 }
+
+const putJokes = (req,res)=> {
+  let id = req.params.id *1;
+  let JokesToUpdate = jokesData.find(jokes => jokes.id == id );
+  let index =  jokesData.indexOf(JokesToUpdate);
+  
+  jokesData[index] =  req.body;
+  
+  res.status(200).send({
+    "status" : "sucess",
+    "message" : "Joke Updated"
+  })
+  };
+
+
+  
 module.exports = {
   addJokes,
-  getJokes
+  getJokes,
+  putJokes,
 };

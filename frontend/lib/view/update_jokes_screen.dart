@@ -2,14 +2,15 @@ import 'package:blog_application/model/jokes_model.dart';
 import 'package:blog_application/view_model/jokes_view_model.dart';
 import 'package:flutter/material.dart';
 
-class ViewJokesScreen extends StatefulWidget {
-  const ViewJokesScreen({super.key});
+class UpdateJokesScreen extends StatefulWidget {
+  final Joke joke;
+  const UpdateJokesScreen({super.key, required this.joke});
 
   @override
-  _ViewJokesScreenState createState() => _ViewJokesScreenState();
+  _UpdateJokesScreenState createState() => _UpdateJokesScreenState();
 }
 
-class _ViewJokesScreenState extends State<ViewJokesScreen> {
+class _UpdateJokesScreenState extends State<UpdateJokesScreen> {
   final JokesViewModel _getJokes = JokesViewModel();
 
   @override
@@ -46,9 +47,10 @@ class _ViewJokesScreenState extends State<ViewJokesScreen> {
                 children: jokes.map((joke) {
                   return Card(
                     child: ListTile(
-                      title: Text(joke.title),
-                      subtitle: Text(joke.description),
-                    ),
+                        title: Text(joke.title),
+                        subtitle: Text(joke.description),
+                        trailing: IconButton(
+                            icon: const Icon(Icons.edit), onPressed: () {})),
                   );
                 }).toList(),
               ),

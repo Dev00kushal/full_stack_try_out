@@ -36,4 +36,19 @@ class JokesViewModel extends ChangeNotifier {
       rethrow;
     }
   }
+
+  Future<List<Joke>> updateJokes(Joke joke) async {
+    try {
+      dynamic response = await _baseApiServices.putApiResponse(
+          AppUrls.updateJokesUrl, joke.toJson());
+      List<Joke> jokes = List<Joke>.from(response["allJokes"].map((value) =>
+          Joke(
+              id: value["id"],
+              title: value["title"],
+              description: value["description"])));
+      return jokes;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

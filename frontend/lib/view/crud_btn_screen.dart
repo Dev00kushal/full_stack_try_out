@@ -24,7 +24,9 @@ class JokesScreen extends StatelessWidget {
             child: const Text('Read'),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, RoutesName.updateJokesScreen);
+            },
             child: const Text('Update'),
           ),
           ElevatedButton(
