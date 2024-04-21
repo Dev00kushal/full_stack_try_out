@@ -25,13 +25,9 @@ class _UpdateJokesScreenState extends State<UpdateJokesScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            // print(snapshot.error);
-            // Check the type of error
             if (snapshot.error is String) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else {
-              // print('Error type: ${snapshot.error.runtimeType}');
-              // print(snapshot.error);
               return const Center(
                   child: Text(
                 'An unknown error occurred',
@@ -47,10 +43,11 @@ class _UpdateJokesScreenState extends State<UpdateJokesScreen> {
                 children: jokes.map((joke) {
                   return Card(
                     child: ListTile(
-                        title: Text(joke.title),
-                        subtitle: Text(joke.description),
-                        trailing: IconButton(
-                            icon: const Icon(Icons.edit), onPressed: () {})),
+                      title: Text(joke.title),
+                      subtitle: Text(joke.description),
+                      trailing: IconButton(
+                          icon: const Icon(Icons.edit), onPressed: () {}),
+                    ),
                   );
                 }).toList(),
               ),
